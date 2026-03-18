@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { dmsSystems } from "@/data/dms-systems";
+import { ScannerIllustration } from "@/components/illustrations";
 
 const deploymentLabels: Record<string, string> = {
   cloud: "Cloud",
@@ -47,18 +48,25 @@ export default function DMSDetailPage({ params }: PageProps) {
           >
             ← Back to DMS Directory
           </Link>
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-5xl">{dms.emoji}</span>
-            <h1 className="text-3xl md:text-4xl font-extrabold">{dms.name}</h1>
-          </div>
-          <p className="text-lg text-gray-300">{dms.shortDescription}</p>
-          <div className="flex flex-wrap gap-3 mt-4">
-            <span className="text-sm font-medium bg-white/10 px-3 py-1 rounded-full">
-              {pricingLabels[dms.pricingModel]}
-            </span>
-            <span className="text-sm font-medium bg-white/10 px-3 py-1 rounded-full">
-              {deploymentLabels[dms.deployment]}
-            </span>
+          <div className="flex items-start justify-between gap-6">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-5xl">{dms.emoji}</span>
+                <h1 className="text-3xl md:text-4xl font-extrabold">{dms.name}</h1>
+              </div>
+              <p className="text-lg text-gray-300">{dms.shortDescription}</p>
+              <div className="flex flex-wrap gap-3 mt-4">
+                <span className="text-sm font-medium bg-white/10 px-3 py-1 rounded-full">
+                  {pricingLabels[dms.pricingModel]}
+                </span>
+                <span className="text-sm font-medium bg-white/10 px-3 py-1 rounded-full">
+                  {deploymentLabels[dms.deployment]}
+                </span>
+              </div>
+            </div>
+            <div className="hidden md:block shrink-0">
+              <ScannerIllustration className="w-[200px] h-[150px]" />
+            </div>
           </div>
         </div>
       </section>
@@ -131,9 +139,10 @@ export default function DMSDetailPage({ params }: PageProps) {
 
           {dms.scanCompatible && (
             <div className="bg-navy rounded-2xl p-8 text-white">
-              <h2 className="text-xl font-bold mb-3">
-                Scanner Compatibility
-              </h2>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-3xl">🖨️</span>
+                <h2 className="text-xl font-bold">Scanner Compatibility</h2>
+              </div>
               <p className="text-gray-300 mb-6">{dms.scanNotes}</p>
               <div className="bg-white/10 rounded-xl p-6">
                 <p className="text-lg font-semibold mb-2">

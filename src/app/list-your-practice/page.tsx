@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { JoinIllustration } from "@/components/illustrations";
 
 const regions = [
   "London",
@@ -131,225 +132,246 @@ export default function ListYourPracticePage() {
             List Your Practice
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Join the scan2dms consultant directory for free. Get found by UK
-            businesses looking for document management expertise.
+            Join the scan2dms consultant directory for free.
           </p>
         </div>
       </section>
 
       <section className="py-12 md:py-16">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {error && (
-              <div className="bg-red-50 text-red-700 px-4 py-3 rounded-lg text-sm">
-                {error}
-              </div>
-            )}
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Full Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Company Name
-              </label>
-              <input
-                type="text"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Type
-              </label>
-              <div className="flex gap-6">
-                {["Individual", "Consultancy", "Reseller"].map((t) => (
-                  <label key={t} className="flex items-center gap-2 text-sm">
-                    <input
-                      type="radio"
-                      name="type"
-                      value={t}
-                      checked={type === t}
-                      onChange={(e) => setType(e.target.value)}
-                      className="text-blue-accent focus:ring-blue-accent"
-                    />
-                    {t}
-                  </label>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
+            {/* Left panel — illustration + trust bullets */}
+            <div className="md:col-span-2 flex flex-col items-center md:items-start gap-8">
+              <JoinIllustration className="w-full max-w-xs" />
+              <ul className="space-y-4">
+                {[
+                  { icon: "✅", text: "Free forever — no hidden fees" },
+                  { icon: "👀", text: "Seen by UK businesses searching for DMS help" },
+                  { icon: "📩", text: "Direct enquiries to your inbox" },
+                ].map((item) => (
+                  <li key={item.text} className="flex items-start gap-3">
+                    <span className="text-xl shrink-0">{item.icon}</span>
+                    <span className="text-gray-700 font-medium">{item.text}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-                />
-              </div>
-            </div>
+            {/* Right panel — form */}
+            <div className="md:col-span-3">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="bg-red-50 text-red-700 px-4 py-3 rounded-lg text-sm">
+                    {error}
+                  </div>
+                )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Website URL
-                </label>
-                <input
-                  type="url"
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-                  placeholder="https://"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  LinkedIn URL
-                </label>
-                <input
-                  type="url"
-                  value={linkedin}
-                  onChange={(e) => setLinkedin(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-                  placeholder="https://linkedin.com/in/..."
-                />
-              </div>
-            </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Full Name <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                  />
+                </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  City <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Region
-                </label>
-                <select
-                  value={region}
-                  onChange={(e) => setRegion(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    value={company}
+                    onChange={(e) => setCompany(e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Type
+                  </label>
+                  <div className="flex gap-6">
+                    {["Individual", "Consultancy", "Reseller"].map((t) => (
+                      <label key={t} className="flex items-center gap-2 text-sm">
+                        <input
+                          type="radio"
+                          name="type"
+                          value={t}
+                          checked={type === t}
+                          onChange={(e) => setType(e.target.value)}
+                          className="text-blue-accent focus:ring-blue-accent"
+                        />
+                        {t}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Website URL
+                    </label>
+                    <input
+                      type="url"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                      placeholder="https://"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      LinkedIn URL
+                    </label>
+                    <input
+                      type="url"
+                      value={linkedin}
+                      onChange={(e) => setLinkedin(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                      placeholder="https://linkedin.com/in/..."
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      City <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Region
+                    </label>
+                    <select
+                      value={region}
+                      onChange={(e) => setRegion(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                    >
+                      <option value="">Select region...</option>
+                      {regions.map((r) => (
+                        <option key={r} value={r}>
+                          {r}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Specialisms
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {specialismOptions.map((s) => (
+                      <label
+                        key={s}
+                        className="flex items-center gap-2 text-sm text-gray-700"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={specialisms.includes(s)}
+                          onChange={() =>
+                            toggleCheckbox(s, specialisms, setSpecialisms)
+                          }
+                          className="text-blue-accent focus:ring-blue-accent rounded"
+                        />
+                        {s}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Sectors Served
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    {sectorOptions.map((s) => (
+                      <label
+                        key={s}
+                        className="flex items-center gap-2 text-sm text-gray-700"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={sectors.includes(s)}
+                          onChange={() => toggleCheckbox(s, sectors, setSectors)}
+                          className="text-blue-accent focus:ring-blue-accent rounded"
+                        />
+                        {s}
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Brief Description
+                  </label>
+                  <textarea
+                    value={description}
+                    onChange={(e) =>
+                      setDescription(e.target.value.slice(0, 300))
+                    }
+                    rows={4}
+                    maxLength={300}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
+                    placeholder="Describe your practice, expertise, and the types of clients you work with..."
+                  />
+                  <p className="text-xs text-gray-400 mt-1 text-right">
+                    {description.length}/300
+                  </p>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full bg-blue-accent hover:bg-blue-600 disabled:opacity-50 text-white font-semibold py-4 rounded-lg text-lg transition-colors"
                 >
-                  <option value="">Select region...</option>
-                  {regions.map((r) => (
-                    <option key={r} value={r}>
-                      {r}
-                    </option>
-                  ))}
-                </select>
-              </div>
+                  {submitting ? "Submitting..." : "Submit Your Listing"}
+                </button>
+              </form>
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Specialisms
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {specialismOptions.map((s) => (
-                  <label
-                    key={s}
-                    className="flex items-center gap-2 text-sm text-gray-700"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={specialisms.includes(s)}
-                      onChange={() =>
-                        toggleCheckbox(s, specialisms, setSpecialisms)
-                      }
-                      className="text-blue-accent focus:ring-blue-accent rounded"
-                    />
-                    {s}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Sectors Served
-              </label>
-              <div className="grid grid-cols-2 gap-2">
-                {sectorOptions.map((s) => (
-                  <label
-                    key={s}
-                    className="flex items-center gap-2 text-sm text-gray-700"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={sectors.includes(s)}
-                      onChange={() => toggleCheckbox(s, sectors, setSectors)}
-                      className="text-blue-accent focus:ring-blue-accent rounded"
-                    />
-                    {s}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Brief Description
-              </label>
-              <textarea
-                value={description}
-                onChange={(e) =>
-                  setDescription(e.target.value.slice(0, 300))
-                }
-                rows={4}
-                maxLength={300}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-accent"
-                placeholder="Describe your practice, expertise, and the types of clients you work with..."
-              />
-              <p className="text-xs text-gray-400 mt-1 text-right">
-                {description.length}/300
-              </p>
-            </div>
-
-            <button
-              type="submit"
-              disabled={submitting}
-              className="w-full bg-blue-accent hover:bg-blue-600 disabled:opacity-50 text-white font-semibold py-4 rounded-lg text-lg transition-colors"
-            >
-              {submitting ? "Submitting..." : "Submit Your Listing"}
-            </button>
-          </form>
+          </div>
         </div>
       </section>
     </>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { consultants } from "@/data/consultants";
+import { TeamIllustration } from "@/components/illustrations";
 
 const allRegions = Array.from(new Set(consultants.map((c) => c.region))).sort();
 const allSpecialisms = Array.from(
@@ -17,6 +18,15 @@ const typeBadgeColors: Record<string, string> = {
   Consultancy: "bg-blue-50 text-blue-700",
   Reseller: "bg-purple-50 text-purple-700",
 };
+
+function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
 
 export default function ConsultantsDirectoryPage() {
   const [regionFilter, setRegionFilter] = useState("");
@@ -34,14 +44,21 @@ export default function ConsultantsDirectoryPage() {
   return (
     <>
       <section className="bg-navy text-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
-            Find a UK DMS Specialist
-          </h1>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Browse document management consultants, resellers, and independent
-            specialists across the UK.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-8">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Find a UK DMS Specialist
+              </h1>
+              <p className="text-lg text-gray-300 max-w-2xl">
+                Browse document management consultants, resellers, and
+                independent specialists across the UK.
+              </p>
+            </div>
+            <div className="hidden md:block shrink-0">
+              <TeamIllustration className="w-[200px] h-[150px]" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -130,8 +147,11 @@ export default function ConsultantsDirectoryPage() {
                   href={`/consultants/${consultant.slug}`}
                   className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-blue-accent transition-all group"
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
+                  <div className="flex items-start gap-4 mb-3">
+                    <div className="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center text-sm font-bold shrink-0">
+                      {getInitials(consultant.name)}
+                    </div>
+                    <div className="min-w-0">
                       <h3 className="text-lg font-bold text-navy group-hover:text-blue-accent transition-colors">
                         {consultant.name}
                       </h3>
@@ -140,7 +160,7 @@ export default function ConsultantsDirectoryPage() {
                       </p>
                     </div>
                     <span
-                      className={`text-xs font-medium px-2 py-1 rounded-full ${typeBadgeColors[consultant.type]}`}
+                      className={`text-xs font-medium px-2 py-1 rounded-full shrink-0 ${typeBadgeColors[consultant.type]}`}
                     >
                       {consultant.type}
                     </span>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { dmsSystems } from "@/data/dms-systems";
+import { DirectoryIllustration } from "@/components/illustrations";
 
 const allSectors = Array.from(
   new Set(dmsSystems.flatMap((d) => d.sectors))
@@ -36,15 +37,21 @@ export default function DMSDirectoryPage() {
   return (
     <>
       <section className="bg-navy text-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
-            Compare Document Management Systems
-          </h1>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Browse {dmsSystems.length} DMS platforms. Filter by sector,
-            deployment type, or pricing model to find the right fit for your
-            organisation.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between gap-8">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
+                Compare Document Management Systems
+              </h1>
+              <p className="text-lg text-gray-300 max-w-2xl">
+                Browse {dmsSystems.length} DMS platforms — filter by sector,
+                deployment type, or pricing model.
+              </p>
+            </div>
+            <div className="hidden md:block shrink-0">
+              <DirectoryIllustration className="w-[200px] h-[150px]" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -122,7 +129,7 @@ export default function DMSDirectoryPage() {
                       </h3>
                     </div>
                   </div>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-1">
                     {dms.shortDescription}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-3">
