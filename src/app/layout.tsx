@@ -22,8 +22,8 @@ function Navbar() {
     { href: "/dms", label: "DMS Systems" },
     { href: "/consultants", label: "Find a Consultant" },
     { href: "/list-your-practice", label: "List Your Practice" },
-    { href: "/guides/what-is-scan-to-dms", label: "Guides" },
-    { href: "/industries/legal", label: "Industries" },
+    { href: "/guides", label: "Guides" },
+    { href: "/industries", label: "Industries" },
     { href: "/products/escan-a450-pro", label: "Hardware" },
   ];
 
