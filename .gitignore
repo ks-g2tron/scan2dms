@@ -35,3 +35,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env.local
+TASK.md
+TASK2.md
+run-build.sh
+scan2dms/
