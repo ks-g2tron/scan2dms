@@ -19,11 +19,12 @@ export const metadata: Metadata = {
 
 function Navbar() {
   const links = [
-    { href: "/solutions/scan-to-sharepoint", label: "Solutions" },
-    { href: "/industries/legal", label: "Industries" },
-    { href: "/products/escan-a450-pro", label: "Products" },
+    { href: "/dms", label: "DMS Systems" },
+    { href: "/consultants", label: "Find a Consultant" },
+    { href: "/list-your-practice", label: "List Your Practice" },
     { href: "/guides/what-is-scan-to-dms", label: "Guides" },
-    { href: "/about", label: "About" },
+    { href: "/industries/legal", label: "Industries" },
+    { href: "/products/escan-a450-pro", label: "Hardware" },
   ];
 
   return (
@@ -86,12 +87,12 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-3">Resources</h4>
+            <h4 className="font-semibold mb-3">Directory</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/products/escan-a450-pro" className="hover:text-white">eScan A450 Pro</Link></li>
-              <li><Link href="/guides/what-is-scan-to-dms" className="hover:text-white">What is Scan to DMS?</Link></li>
-              <li><Link href="/guides/why-pc-free-scanning" className="hover:text-white">Why PC-Free Scanning?</Link></li>
-              <li><Link href="/guides/sharepoint-scanner-setup" className="hover:text-white">SharePoint Scanner Setup</Link></li>
+              <li><Link href="/dms" className="hover:text-white">DMS Systems</Link></li>
+              <li><Link href="/consultants" className="hover:text-white">Find a Consultant</Link></li>
+              <li><Link href="/list-your-practice" className="hover:text-white">List Your Practice</Link></li>
+              <li><Link href="/products/escan-a450-pro" className="hover:text-white">Hardware</Link></li>
             </ul>
           </div>
           <div>
