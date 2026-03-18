@@ -46,8 +46,15 @@ export default function IndustriesPage() {
         </div>
       </section>
 
+      {/* Intro paragraph */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-4">
+        <p className="text-lg text-gray-600 max-w-3xl">
+          UK businesses across every sector are moving to digital document management. Find your industry below for tailored scanning and DMS guidance.
+        </p>
+      </section>
+
       {/* Industry Cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {industries.map((industry) => (
             <Link
