@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Link from "next/link";
 
@@ -150,6 +151,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Script src="https://analytics.buyandscrap.com/script.js" data-website-id="d9c31ea5-03e3-42a2-bb30-f0bdbeb20653" strategy="afterInteractive" />
       </body>
     </html>
   );
