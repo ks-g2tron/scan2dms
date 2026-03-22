@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://scan2dms.com";
+  const baseUrl = "https://scan2dms.co.uk";
 
   const routes = [
     "",

@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://scan2dms.com/sitemap.xml",
+    sitemap: "https://scan2dms.co.uk/sitemap.xml",
   };
 }
