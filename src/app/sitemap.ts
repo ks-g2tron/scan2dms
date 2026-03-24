@@ -21,6 +21,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/guides/scan-to-dms-document-scanning-workflows", priority: 0.9 },
     { path: "/guides/document-management-gdpr-compliance-uk", priority: 0.9 },
     { path: "/guides/find-hire-dms-consultant-uk", priority: 0.9 },
+    // Pillar 2 cluster posts
+    { path: "/guides/sharepoint-vs-dedicated-dms-uk", priority: 0.7 },
+    { path: "/guides/best-dms-law-firms-uk", priority: 0.7 },
+    { path: "/guides/best-dms-accountants-finance-uk", priority: 0.7 },
+    { path: "/guides/best-dms-healthcare-nhs-uk", priority: 0.7 },
+    { path: "/guides/free-vs-paid-dms-uk", priority: 0.7 },
+    { path: "/guides/migrate-shared-drive-to-dms", priority: 0.7 },
+    { path: "/guides/document-management-remote-hybrid-teams-uk", priority: 0.7 },
+    { path: "/guides/cloud-dms-vs-on-premise-uk", priority: 0.7 },
+    { path: "/guides/dms-roi-calculation-uk", priority: 0.7 },
+    { path: "/guides/dms-implementation-guide-uk", priority: 0.7 },
+    { path: "/guides/best-dms-manufacturing-uk", priority: 0.7 },
     // Foundation guides
     { path: "/guides/what-is-scan-to-dms", priority: 0.7 },
     { path: "/guides/why-pc-free-scanning", priority: 0.7 },
