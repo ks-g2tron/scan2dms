@@ -4,32 +4,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://scan2dms.co.uk";
 
   const routes = [
-    "",
-    "/solutions/scan-to-sharepoint",
-    "/solutions/scan-to-onedrive",
-    "/solutions/scan-to-network-folder",
-    "/solutions/scan-to-email",
-    "/industries",
-    "/industries/legal",
-    "/industries/finance",
-    "/industries/healthcare",
-    "/industries/education",
-    "/products/escan-a450-pro",
-    "/guides",
-    "/guides/what-is-scan-to-dms",
-    "/guides/why-pc-free-scanning",
-    "/guides/sharepoint-scanner-setup",
-    "/dms",
-    "/consultants",
-    "/list-your-practice",
-    "/about",
-    "/contact",
+    { path: "", priority: 1.0 },
+    { path: "/solutions/scan-to-sharepoint", priority: 0.9 },
+    { path: "/solutions/scan-to-onedrive", priority: 0.8 },
+    { path: "/solutions/scan-to-network-folder", priority: 0.8 },
+    { path: "/solutions/scan-to-email", priority: 0.8 },
+    { path: "/industries/legal", priority: 0.8 },
+    { path: "/industries/finance", priority: 0.8 },
+    { path: "/industries/healthcare", priority: 0.8 },
+    { path: "/industries/education", priority: 0.8 },
+    { path: "/products/escan-a450-pro", priority: 0.9 },
+    // Pillar guides — high priority
+    { path: "/guides", priority: 0.9 },
+    { path: "/guides/going-paperless-uk-businesses", priority: 0.9 },
+    { path: "/guides/how-to-choose-document-management-system-uk", priority: 0.9 },
+    { path: "/guides/scan-to-dms-document-scanning-workflows", priority: 0.9 },
+    { path: "/guides/document-management-gdpr-compliance-uk", priority: 0.9 },
+    { path: "/guides/find-hire-dms-consultant-uk", priority: 0.9 },
+    // Foundation guides
+    { path: "/guides/what-is-scan-to-dms", priority: 0.7 },
+    { path: "/guides/why-pc-free-scanning", priority: 0.7 },
+    { path: "/guides/sharepoint-scanner-setup", priority: 0.7 },
+    { path: "/about", priority: 0.5 },
+    { path: "/contact", priority: 0.6 },
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+  return routes.map(({ path, priority }) => ({
+    url: `${baseUrl}${path}`,
     lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route === "/solutions/scan-to-sharepoint" ? 0.9 : 0.7,
+    changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
+    priority,
   }));
 }
