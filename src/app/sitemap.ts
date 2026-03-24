@@ -21,6 +21,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/guides/scan-to-dms-document-scanning-workflows", priority: 0.9 },
     { path: "/guides/document-management-gdpr-compliance-uk", priority: 0.9 },
     { path: "/guides/find-hire-dms-consultant-uk", priority: 0.9 },
+    // Pillar 1 cluster posts — Going Paperless
+    { path: "/guides/going-paperless-cost-uk-sme", priority: 0.7 },
+    { path: "/guides/going-paperless-checklist-uk", priority: 0.7 },
+    { path: "/guides/hidden-cost-of-paper-in-business", priority: 0.7 },
+    { path: "/guides/scan-to-email-vs-scan-to-dms", priority: 0.7 },
+    { path: "/guides/digitise-paper-files-backlog", priority: 0.7 },
+    { path: "/guides/going-paperless-law-firm-uk", priority: 0.7 },
+    { path: "/guides/going-paperless-manufacturing-shopfloor", priority: 0.7 },
+    { path: "/guides/is-sharepoint-good-enough-as-dms", priority: 0.7 },
+    { path: "/guides/train-team-go-paperless", priority: 0.7 },
+    { path: "/guides/paper-vs-digital-when-manual-wins", priority: 0.7 },
     // Pillar 2 cluster posts
     { path: "/guides/sharepoint-vs-dedicated-dms-uk", priority: 0.7 },
     { path: "/guides/best-dms-law-firms-uk", priority: 0.7 },
