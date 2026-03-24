@@ -32,6 +32,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/guides/is-sharepoint-good-enough-as-dms", priority: 0.7 },
     { path: "/guides/train-team-go-paperless", priority: 0.7 },
     { path: "/guides/paper-vs-digital-when-manual-wins", priority: 0.7 },
+    // Pillar 4 cluster posts — GDPR Compliance
+    { path: "/guides/uk-document-retention-periods-guide", priority: 0.7 },
+    { path: "/guides/gdpr-paper-documents-business-uk", priority: 0.7 },
+    { path: "/guides/handle-subject-access-request-dms", priority: 0.7 },
+    { path: "/guides/what-is-audit-trail-dms", priority: 0.7 },
+    { path: "/guides/secure-document-disposal-uk", priority: 0.7 },
+    { path: "/guides/gdpr-retention-schedule-template", priority: 0.7 },
+    { path: "/guides/is-sharepoint-gdpr-compliant", priority: 0.7 },
+    { path: "/guides/data-residency-post-brexit-dms", priority: 0.7 },
+    { path: "/guides/gdpr-compliance-checklist-law-firms", priority: 0.7 },
+    { path: "/guides/gdpr-compliance-checklist-accountants", priority: 0.7 },
     // Pillar 2 cluster posts
     { path: "/guides/sharepoint-vs-dedicated-dms-uk", priority: 0.7 },
     { path: "/guides/best-dms-law-firms-uk", priority: 0.7 },
