@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -18,59 +19,13 @@ export const metadata: Metadata = {
   },
 };
 
-function Navbar() {
-  const links = [
-    { href: "/dms", label: "DMS Systems" },
-    { href: "/consultants", label: "Find a Consultant" },
-    { href: "/list-your-practice", label: "List Your Practice" },
-    { href: "/guides", label: "Guides" },
-    { href: "/industries", label: "Industries" },
-    { href: "/products/escan-a450-pro", label: "Hardware" },
-  ];
 
-  return (
-    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold text-navy">
-            scan2dms
-          </Link>
-          <div className="hidden md:flex items-center space-x-8">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-blue-accent transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="bg-navy text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition-colors"
-            >
-              Get a Quote
-            </Link>
-          </div>
-          <div className="md:hidden">
-            <Link
-              href="/contact"
-              className="bg-navy text-white px-4 py-2 rounded-lg text-sm font-semibold"
-            >
-              Get a Quote
-            </Link>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
-}
 
 function Footer() {
   return (
     <footer className="bg-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
             <h3 className="text-lg font-bold mb-4">scan2dms</h3>
             <p className="text-gray-400 text-sm">
@@ -85,6 +40,16 @@ function Footer() {
               <li><Link href="/solutions/scan-to-onedrive" className="hover:text-white">Scan to OneDrive</Link></li>
               <li><Link href="/solutions/scan-to-network-folder" className="hover:text-white">Scan to Network Folder</Link></li>
               <li><Link href="/solutions/scan-to-email" className="hover:text-white">Scan to Email</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-3">Guides</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/guides" className="hover:text-white">All Guides</Link></li>
+              <li><Link href="/guides/going-paperless-uk-businesses" className="hover:text-white">Going Paperless</Link></li>
+              <li><Link href="/guides/how-to-choose-document-management-system-uk" className="hover:text-white">Choosing a DMS</Link></li>
+              <li><Link href="/guides/document-management-gdpr-compliance-uk" className="hover:text-white">GDPR & Compliance</Link></li>
+              <li><Link href="/guides/find-hire-dms-consultant-uk" className="hover:text-white">DMS Consultants</Link></li>
             </ul>
           </div>
           <div>
