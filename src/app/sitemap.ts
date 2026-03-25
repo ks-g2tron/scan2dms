@@ -32,6 +32,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/guides/is-sharepoint-good-enough-as-dms", priority: 0.7 },
     { path: "/guides/train-team-go-paperless", priority: 0.7 },
     { path: "/guides/paper-vs-digital-when-manual-wins", priority: 0.7 },
+    // Pillar 3 missing cluster posts — Scan to DMS
+    { path: "/guides/scan-to-sharepoint-vs-onedrive", priority: 0.7 },
+    { path: "/guides/scan-to-dms-healthcare-nhs-data-security", priority: 0.7 },
+    { path: "/guides/document-scanning-iso-9001-quality-management", priority: 0.7 },
+    { path: "/guides/barcode-document-splitting-explained", priority: 0.7 },
+    { path: "/guides/connect-scanner-sharepoint-online-modern-auth", priority: 0.7 },
+    { path: "/guides/ocr-explained-how-scanners-make-documents-searchable", priority: 0.7 },
+    { path: "/guides/hp-scan-to-sharepoint-stopped-working-fix", priority: 0.7 },
+    { path: "/guides/best-document-scanners-manufacturing-shopfloor", priority: 0.7 },
+    { path: "/guides/pc-free-network-scanner-buying-guide-uk", priority: 0.7 },
+    { path: "/guides/scan-to-sharepoint-without-pc-setup", priority: 0.7 },
     // Pillar 5 cluster posts — DMS Consultant
     { path: "/guides/what-does-dms-consultant-do", priority: 0.7 },
     { path: "/guides/dms-consultant-cost-uk", priority: 0.7 },
