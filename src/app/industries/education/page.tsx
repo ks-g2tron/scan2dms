@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { ScannerIllustration, DirectoryIllustration } from "@/components/illustrations";
 
 export const metadata: Metadata = {
