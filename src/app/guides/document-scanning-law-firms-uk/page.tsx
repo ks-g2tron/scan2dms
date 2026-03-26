@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function DocumentScanningLawFirmsPage() {
     <main className="max-w-3xl mx-auto px-4 py-16">
       <p className="text-blue-accent font-semibold text-sm uppercase tracking-wide mb-2">Guide</p>
       <h1 className="text-4xl font-extrabold text-navy mb-6">Document Scanning for UK Law Firms</h1>
+      <Image src="/images/guides/document-scanning-law-firms-uk/uk-law-firm-document-scanning-case-files.jpg" alt="UK solicitor in law firm office overwhelmed by towering stacks of case files and court bundles" width={1280} height={720} className="rounded-xl shadow-lg w-full h-auto object-cover mb-8" priority />
       <div className="prose prose-lg text-gray-700 space-y-6">
         <p>Law firms are among the most paper-intensive businesses in the UK. Every matter generates correspondence, contracts, court documents, attendance notes, and compliance records. Scanning these into a structured document management system reduces retrieval time from minutes to seconds, eliminates misfiling risk, and enables remote working without compromising on security or compliance.</p>
 
@@ -30,6 +32,8 @@ export default function DocumentScanningLawFirmsPage() {
         <h2 className="text-2xl font-bold text-navy">Court Bundles</h2>
         <p>Court bundles are one of the highest-value scanning use cases in legal. Preparing a bundle from paper files is labour-intensive — photocopying, paginating, indexing, duplicating for each party. With digital case files, bundle preparation becomes a matter of selecting documents, ordering them, adding page numbers, and generating a PDF bundle with hyperlinked index.</p>
         <p>For firms that receive paper bundles from other parties, scanning them into the matter folder immediately makes them searchable and accessible to the whole team. OCR (optical character recognition) makes the text within the scanned bundle searchable — find a specific clause, date, or name across hundreds of pages in seconds.</p>
+
+        <Image src="/images/guides/document-scanning-law-firms-uk/law-firm-court-bundle-scanning-sharepoint.jpg" alt="Law firm paralegal scanning court bundles with professional document scanner, SharePoint matter folders on screen" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">Matter Folder Structure in SharePoint</h2>
         <p>SharePoint is increasingly common as a legal DMS, particularly in smaller and mid-size firms. The key to making it work for legal is a consistent matter folder structure. Every matter folder should follow the same template:</p>
@@ -63,6 +67,8 @@ export default function DocumentScanningLawFirmsPage() {
           <li><strong>Child-related matters:</strong> Retain until the child turns 21, plus a reasonable buffer</li>
         </ul>
         <p>A digital DMS with automated retention policies manages this complexity automatically — each matter is tagged with its practice area and the system calculates the retention date accordingly.</p>
+
+        <Image src="/images/guides/document-scanning-law-firms-uk/paperless-uk-law-firm-sharepoint-matter-folders.jpg" alt="Modern UK law firm with well-organised SharePoint matter folders on screen, minimal paperwork" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">Choosing a Scanner for Legal</h2>
         <p>Legal scanning demands reliability and ease of use. Fee earners won&apos;t tolerate a scanner that jams, misfeeds, or requires IT support. For most firms, a PC-free network scanner at each scanning station is the best approach — reception for incoming post, each department for local scanning, and the file room for backlog processing.</p>

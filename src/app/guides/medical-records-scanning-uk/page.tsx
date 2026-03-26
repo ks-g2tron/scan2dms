@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -13,12 +14,15 @@ export default function MedicalRecordsScanningPage() {
     <main className="max-w-3xl mx-auto px-4 py-16">
       <p className="text-blue-accent font-semibold text-sm uppercase tracking-wide mb-2">Guide</p>
       <h1 className="text-4xl font-extrabold text-navy mb-6">Medical Records Scanning UK</h1>
+      <Image src="/images/guides/medical-records-scanning-uk/medical-records-scanning-uk-nhs-admin-overwhelmed.jpg" alt="NHS admin worker overwhelmed by stacks of patient records and medical files in an NHS trust office" width={1280} height={720} className="rounded-xl shadow-lg w-full h-auto object-cover mb-8" priority />
       <div className="prose prose-lg text-gray-700 space-y-6">
         <p>Paper medical records are a liability — they slow down patient care, take up valuable clinical space, and create GDPR risk every time a file is misplaced. Scanning medical records into a structured document management system solves all three problems, but healthcare scanning comes with unique regulatory requirements that general-purpose advice doesn&apos;t cover.</p>
 
         <h2 className="text-2xl font-bold text-navy">Why Scan Medical Records?</h2>
         <p>A typical GP surgery holds 8,000–12,000 Lloyd George envelopes. Each patient folder averages 50–100 pages. That&apos;s 400,000–1,200,000 pages of paper occupying rooms that could be used for clinical consultations. Beyond space, paper records create direct risks: misfiled blood results, lost referral letters, illegible handwritten notes that delay treatment decisions.</p>
         <p>Digitised records are instantly searchable, accessible from any consulting room, and backed up automatically. When a patient calls with an urgent query, reception staff retrieve the relevant document in seconds rather than pulling a physical file from storage.</p>
+
+        <Image src="/images/guides/medical-records-scanning-uk/medical-records-scanning-digital-sharepoint-healthcare.jpg" alt="Healthcare worker scanning medical records directly to SharePoint document management system" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">NHS Records Management Code of Practice</h2>
         <p>The NHS Records Management Code of Practice (updated 2021) is the authoritative framework for managing health records in England. It applies to all NHS organisations and sets minimum retention periods for every category of health record. The Code explicitly permits digital records as replacements for paper originals, provided the scanning process meets defined quality standards.</p>
@@ -44,6 +48,8 @@ export default function MedicalRecordsScanningPage() {
           <li><strong>Oncology records:</strong> 30 years after conclusion of treatment</li>
         </ul>
         <p>A digital DMS with automated retention policies flags records approaching their destruction date and prevents premature deletion — something impossible to manage reliably with paper.</p>
+
+        <Image src="/images/guides/medical-records-scanning-uk/gp-surgery-scanning-patient-records-emis.jpg" alt="GP surgery receptionist scanning patient registration forms with EMIS system visible on screen" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">GP Surgery Scanning Workflow</h2>
         <p>The most effective workflow for GP surgeries is to scan at the point of entry. When post arrives — referral letters, hospital discharge summaries, pathology results — it&apos;s scanned immediately by reception before being routed to the appropriate clinician for action.</p>

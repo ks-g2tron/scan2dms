@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function NHSDocumentScanningPage() {
     <main className="max-w-3xl mx-auto px-4 py-16">
       <p className="text-blue-accent font-semibold text-sm uppercase tracking-wide mb-2">Guide</p>
       <h1 className="text-4xl font-extrabold text-navy mb-6">Document Scanning for NHS Organisations</h1>
+      <Image src="/images/guides/nhs-document-scanning/nhs-document-scanning-hospital-paper-records.jpg" alt="NHS hospital admin worker with trolley overflowing with paper medical records and patient files" width={1280} height={720} className="rounded-xl shadow-lg w-full h-auto object-cover mb-8" priority />
       <div className="prose prose-lg text-gray-700 space-y-6">
         <p>NHS organisations face a unique combination of pressures: immense paper volumes, strict information governance requirements, limited IT budgets, and regulatory scrutiny from CQC. This guide covers the regulatory framework, practical implementation steps, and technology choices for NHS document scanning projects.</p>
 
@@ -35,6 +37,8 @@ export default function NHSDocumentScanningPage() {
           <li><strong>Standard 9:</strong> IT systems are protected from cyber threats — network scanners must sit behind appropriate firewalls and use encrypted connections</li>
         </ul>
         <p>When selecting a scanning solution, ensure the vendor can provide evidence of compliance with these standards. For cloud destinations like SharePoint Online, Microsoft&apos;s NHS Data Security and Protection Toolkit submission covers the platform — you need to demonstrate compliant configuration and usage.</p>
+
+        <Image src="/images/guides/nhs-document-scanning/nhs-trust-document-scanning-sharepoint.jpg" alt="NHS trust document scanning room with professional scanner digitising medical records to SharePoint" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">CQC and Document Management</h2>
         <p>The Care Quality Commission assesses document management as part of its &quot;Well-Led&quot; key question. CQC inspectors look for evidence that records are accurate, complete, legible, and accessible to those who need them. A well-implemented digital scanning system strengthens CQC evidence because:</p>
@@ -60,6 +64,8 @@ export default function NHSDocumentScanningPage() {
           <li><strong>Run a pilot:</strong> Start with one department or document type. Resolve issues before scaling.</li>
           <li><strong>Scale and monitor:</strong> Roll out to remaining departments. Monitor scanning volumes, quality rejection rates, and user adoption.</li>
         </ol>
+
+        <Image src="/images/guides/nhs-document-scanning/nhs-admin-digital-patient-records-sharepoint.jpg" alt="NHS admin worker at computer showing secure digital patient records in SharePoint document management" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">Choosing the Right Scanner for NHS</h2>
         <p>NHS environments need scanners that are reliable, easy to use without IT support, and secure. Key selection criteria:</p>

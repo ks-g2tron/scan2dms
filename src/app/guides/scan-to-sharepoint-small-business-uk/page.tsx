@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function ScanToSharePointSmallBusinessPage() {
     <main className="max-w-3xl mx-auto px-4 py-16">
       <p className="text-blue-accent font-semibold text-sm uppercase tracking-wide mb-2">Guide</p>
       <h1 className="text-4xl font-extrabold text-navy mb-6">Scan to SharePoint for UK Small Business</h1>
+      <Image src="/images/guides/scan-to-sharepoint-small-business-uk/small-business-uk-paper-documents-overwhelmed.jpg" alt="UK small business owner overwhelmed by piles of invoices, receipts and paper documents on office desk" width={1280} height={720} className="rounded-xl shadow-lg w-full h-auto object-cover mb-8" priority />
       <div className="prose prose-lg text-gray-700 space-y-6">
         <p>You don&apos;t need an IT department to scan documents into SharePoint. If your business already pays for Microsoft 365, you have SharePoint — and with the right scanner, you can be scanning documents into organised folders within an hour of unboxing. This guide walks through the setup for UK small businesses with no dedicated IT support.</p>
 
@@ -39,6 +41,8 @@ export default function ScanToSharePointSmallBusinessPage() {
         <p>Traditional scanners need a PC with drivers and scanning software installed. When the PC updates, the scanner often breaks. When staff change, someone needs to reconfigure the software. For a small business without IT support, this creates ongoing friction.</p>
         <p>The <Link href="/products/escan-a450-pro" className="text-blue-600 hover:underline">Plustek eScan A450 Pro</Link> is a standalone network scanner with a 7-inch touchscreen. It connects directly to your SharePoint Online — no PC in the middle. Staff walk up, select the destination folder on the touchscreen, feed the paper, and press scan. The document appears in SharePoint within seconds.</p>
 
+        <Image src="/images/guides/scan-to-sharepoint-small-business-uk/scan-to-sharepoint-small-business-plustek-scanner.jpg" alt="Small business owner using Plustek network scanner to scan documents directly to Microsoft SharePoint" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
+
         <h2 className="text-2xl font-bold text-navy">Step-by-Step Setup</h2>
         <ol>
           <li><strong>Create your SharePoint site:</strong> In your Microsoft 365 admin centre, create a team site (e.g. &quot;Company Documents&quot;). Create document libraries for each category: Invoices, Contracts, Client Files, HR, Policies.</li>
@@ -58,6 +62,8 @@ export default function ScanToSharePointSmallBusinessPage() {
           <li><strong>Policies &amp; Compliance</strong> — health and safety, GDPR policies, insurance certificates</li>
           <li><strong>Accounts</strong> — bank statements, receipts, VAT returns (restricted access)</li>
         </ul>
+
+        <Image src="/images/guides/scan-to-sharepoint-small-business-uk/paperless-small-business-office-sharepoint-uk.jpg" alt="Paperless small business office with documents organised in SharePoint on screen, scanner in background" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">Common Questions from Small Business Owners</h2>
 

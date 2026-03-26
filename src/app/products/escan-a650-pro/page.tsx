@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -67,6 +68,7 @@ export default function EScanA650ProPage() {
             touchscreen — no PC, no drivers, no desktop software.
           </p>
         </div>
+        <Image src="/images/products/escan-a650-pro/plustek-escan-a650-pro-a3-network-scanner-office.jpg" alt="Plustek eScan A650 Pro A3 standalone network scanner with A3 documents in ADF, no PC required" width={1280} height={720} className="rounded-xl shadow-lg w-full h-auto object-cover mb-12" priority />
 
         {/* Key differentiator */}
         <section className="mb-12 bg-blue-50 border border-blue-100 rounded-2xl p-8">
@@ -124,6 +126,8 @@ export default function EScanA650ProPage() {
           </div>
         </section>
 
+        <Image src="/images/products/escan-a650-pro/a3-pc-free-scanner-architecture-drawings-sharepoint.jpg" alt="Architecture firm worker feeding A3 drawings into PC-free network scanner with SharePoint on nearby screen" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover mb-12" />
+
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-navy mb-6">Who Needs an A3 Scanner?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -176,6 +180,8 @@ export default function EScanA650ProPage() {
             </p>
           </div>
         </section>
+
+        <Image src="/images/products/escan-a650-pro/standalone-a3-network-scanner-manufacturing-shopfloor.jpg" alt="Manufacturing engineer using standalone A3 network scanner on factory floor, no computer connected" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover mb-12" />
 
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-navy mb-4">A650 Pro vs. PC-Dependent A3 Scanners</h2>

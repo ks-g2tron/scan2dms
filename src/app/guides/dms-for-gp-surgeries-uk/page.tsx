@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function DMSForGPSurgeriesPage() {
     <main className="max-w-3xl mx-auto px-4 py-16">
       <p className="text-blue-accent font-semibold text-sm uppercase tracking-wide mb-2">Guide</p>
       <h1 className="text-4xl font-extrabold text-navy mb-6">Going Paperless in Your GP Surgery</h1>
+      <Image src="/images/guides/dms-for-gp-surgeries-uk/gp-surgery-reception-paper-records-chaos.jpg" alt="GP surgery receptionist at chaotic front desk buried in paper patient records and prescription forms" width={1280} height={720} className="rounded-xl shadow-lg w-full h-auto object-cover mb-8" priority />
       <div className="prose prose-lg text-gray-700 space-y-6">
         <p>GP surgeries are drowning in paper. Lloyd George envelopes, incoming referrals, hospital discharge summaries, pathology results, prescription requests, insurance reports — the volume is relentless. Going paperless isn&apos;t just about saving storage space. It&apos;s about giving clinicians instant access to the complete patient record, reducing the risk of misfiled results, and freeing up rooms currently used for paper storage.</p>
 
@@ -37,6 +39,8 @@ export default function DMSForGPSurgeriesPage() {
         <h3 className="text-xl font-bold text-navy">SystmOne (TPP)</h3>
         <p>SystmOne has more tightly integrated document management. Documents can be scanned directly into SystmOne using the built-in document import function. SystmOne supports auto-matching of documents to patients using barcoded cover sheets — print a cover sheet from SystmOne, attach it to the paper document, scan, and the system files it automatically.</p>
         <p>Both systems benefit from a fast, reliable scanner at the point of entry. Scanning at reception as post arrives means documents are available in the clinical record within minutes of arrival.</p>
+
+        <Image src="/images/guides/dms-for-gp-surgeries-uk/gp-surgery-scanning-patient-forms-emis-systmone.jpg" alt="GP surgery staff scanning patient registration forms with EMIS clinical system visible on screen" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">CQC Requirements for Records Management</h2>
         <p>CQC inspects GP practices under the &quot;Well-Led&quot; and &quot;Safe&quot; key questions. Records management is assessed in both areas:</p>
@@ -65,6 +69,8 @@ export default function DMSForGPSurgeriesPage() {
           <li>The scanned document appears in the patient&apos;s record within seconds</li>
         </ol>
         <p>For the Lloyd George backlog, consider whether to scan in-house or outsource. In-house gives more control but takes staff time. Outsourced bureau scanning is faster but requires secure transport of patient records off-site.</p>
+
+        <Image src="/images/guides/dms-for-gp-surgeries-uk/paperless-gp-surgery-digital-records-nhs.jpg" alt="Modern paperless UK GP surgery reception with digital patient records on screen and minimal paper" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">SharePoint for Non-Clinical Documents</h2>
         <p>Not everything in a GP surgery is clinical. Practice policies, employment records, meeting minutes, CQC evidence, risk assessments, significant event analyses — these administrative documents are best managed in SharePoint rather than the clinical system.</p>

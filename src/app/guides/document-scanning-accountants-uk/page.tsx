@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link"; // accountancy guide
 
 export const metadata: Metadata = {
   title: "Document Scanning for Accountants UK — HMRC Compliance | Scan2DMS",
@@ -13,6 +14,7 @@ export default function DocumentScanningAccountantsPage() {
     <main className="max-w-3xl mx-auto px-4 py-16">
       <p className="text-blue-accent font-semibold text-sm uppercase tracking-wide mb-2">Guide</p>
       <h1 className="text-4xl font-extrabold text-navy mb-6">Document Scanning for UK Accountancy Practices</h1>
+      <Image src="/images/guides/document-scanning-accountants-uk/uk-accountant-hmrc-paper-records-overwhelmed.jpg" alt="UK accountant overwhelmed by HMRC tax returns, invoices and financial records covering office desk" width={1280} height={720} className="rounded-xl shadow-lg w-full h-auto object-cover mb-8" priority />
       <div className="prose prose-lg text-gray-700 space-y-6">
         <p>Accountancy practices handle vast volumes of paper — client records, bank statements, receipts, invoices, tax correspondence, and Companies House filings. Every document needs to be retained for a defined period, retrievable on demand, and secure. Scanning into a structured document management system transforms how practices manage this burden.</p>
 
@@ -41,6 +43,8 @@ export default function DocumentScanningAccountantsPage() {
           <li><strong>Archive:</strong> At year-end, the entire engagement file is complete in digital form — no need to box and store paper</li>
         </ol>
 
+        <Image src="/images/guides/document-scanning-accountants-uk/accountant-document-scanning-digital-records-uk.jpg" alt="Accountant scanning client financial records with document scanner, organised digital folders on screen" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
+
         <h2 className="text-2xl font-bold text-navy">ICAEW Guidance on Digital Records</h2>
         <p>The Institute of Chartered Accountants in England and Wales (ICAEW) supports the use of digital records. ICAEW&apos;s guidance on record retention states that firms should:</p>
         <ul>
@@ -64,6 +68,8 @@ export default function DocumentScanningAccountantsPage() {
           <li><strong>08 - Source Documents</strong> — scanned invoices, receipts, bank statements provided by the client</li>
         </ul>
         <p>Each folder is replicated per tax year (e.g. Client Name → 2025-26 → sub-folders). This maps naturally to how accountants think about client records.</p>
+
+        <Image src="/images/guides/document-scanning-accountants-uk/making-tax-digital-paperless-accountancy-uk.jpg" alt="Modern paperless UK accountancy office with Making Tax Digital software on screen, minimal paper" width={900} height={600} className="rounded-xl shadow-lg w-full h-auto object-cover" />
 
         <h2 className="text-2xl font-bold text-navy">Scanning Client-Provided Records</h2>
         <p>The annual document collection — the client&apos;s carrier bag of receipts and invoices — is the scanning bottleneck for many practices. Speed and accuracy matter here:</p>
