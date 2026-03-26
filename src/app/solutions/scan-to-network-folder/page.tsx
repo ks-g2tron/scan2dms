@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Scan to Network Folder — Direct from Scanner to Shared Drive",
   description:
     "Scan documents directly to network folders and shared drives without a PC. The Plustek eScan supports SMB/CIFS network shares alongside cloud destinations.",
-  alternates: { canonical: "https://scan2dms.com/solutions/scan-to-network-folder" },
+  alternates: { canonical: "https://scan2dms.co.uk/solutions/scan-to-network-folder" },
 };
 
 export default function ScanToNetworkFolderPage() {

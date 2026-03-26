@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Plustek eScan A450 Pro — 60 PPM PC-Free SharePoint Scanner",
   description:
     "The Plustek eScan A450 Pro scans directly to SharePoint, OneDrive, Teams and email at 60 PPM with no PC required. 7-inch touchscreen, 100-sheet ADF, duplex, WiFi.",
-  alternates: { canonical: "https://scan2dms.com/products/escan-a450-pro" },
+  alternates: { canonical: "https://scan2dms.co.uk/products/escan-a450-pro" },
 };
 
 const specs = [

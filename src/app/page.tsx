@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "scan2dms — The UK's DMS & Document Scanning Resource",
   description:
     "Compare document management systems, find a UK specialist, and discover the right scanning solution for your business. DMS directory, consultant listings, and expert guides.",
-  alternates: { canonical: "https://scan2dms.com" },
+  alternates: { canonical: "https://scan2dms.co.uk" },
 };
 
 export default function HomePage() {

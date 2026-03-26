@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Scan Documents Directly to OneDrive — No PC Required",
   description:
     "Scan documents directly to OneDrive without a PC. The Plustek eScan connects natively to OneDrive for Business as part of Microsoft 365.",
-  alternates: { canonical: "https://scan2dms.com/solutions/scan-to-onedrive" },
+  alternates: { canonical: "https://scan2dms.co.uk/solutions/scan-to-onedrive" },
 };
 
 export default function ScanToOneDrivePage() {

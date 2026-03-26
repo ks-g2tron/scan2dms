@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "What Is Scan to DMS? A Guide to Document Management Scanning",
   description:
     "Learn what scan-to-DMS means, how it works, and why UK businesses use it to get paper documents into SharePoint, OneDrive, and other document management systems.",
-  alternates: { canonical: "https://scan2dms.com/guides/what-is-scan-to-dms" },
+  alternates: { canonical: "https://scan2dms.co.uk/guides/what-is-scan-to-dms" },
 };
 
 export default function WhatIsScanToDmsPage() {

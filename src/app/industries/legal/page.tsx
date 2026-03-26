@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Document Scanning for Law Firms — Scan to SharePoint",
   description:
     "Streamline document scanning in your law firm. Scan case files, contracts, and court bundles directly to SharePoint matter folders with the Plustek eScan.",
-  alternates: { canonical: "https://scan2dms.com/industries/legal" },
+  alternates: { canonical: "https://scan2dms.co.uk/industries/legal" },
 };
 
 export default function LegalPage() {

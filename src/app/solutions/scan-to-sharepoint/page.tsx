@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: "Scan Documents Directly to SharePoint — Without a PC",
   description:
     "Learn how to scan documents directly to SharePoint without a PC using the Plustek eScan. No drivers, no desktop software — just place, tap, and scan to your SharePoint library.",
-  alternates: { canonical: "https://scan2dms.com/solutions/scan-to-sharepoint" },
+  alternates: { canonical: "https://scan2dms.co.uk/solutions/scan-to-sharepoint" },
   openGraph: {
     title: "Scan Documents Directly to SharePoint — Without a PC",
     description: "The complete guide to PC-free SharePoint scanning with the Plustek eScan A450 Pro.",
-    url: "https://scan2dms.com/solutions/scan-to-sharepoint",
+    url: "https://scan2dms.co.uk/solutions/scan-to-sharepoint",
   },
 };
 

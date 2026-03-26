@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "SharePoint Scanner Setup — How to Scan Directly to SharePoint Online",
   description:
     "Step-by-step guide to setting up a Plustek eScan network scanner to scan directly to SharePoint Online without a PC. Covers authentication, libraries, and scan profiles.",
-  alternates: { canonical: "https://scan2dms.com/guides/sharepoint-scanner-setup" },
+  alternates: { canonical: "https://scan2dms.co.uk/guides/sharepoint-scanner-setup" },
 };
 
 export default function SharepointScannerSetupPage() {

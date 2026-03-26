@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Document Scanning for Finance Teams — Scan to SharePoint",
   description:
     "Scan invoices, receipts, and compliance documents directly to SharePoint. Designed for UK accountancy practices and finance departments.",
-  alternates: { canonical: "https://scan2dms.com/industries/finance" },
+  alternates: { canonical: "https://scan2dms.co.uk/industries/finance" },
 };
 
 export default function FinancePage() {

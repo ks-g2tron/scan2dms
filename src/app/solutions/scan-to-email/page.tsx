@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Scan to Email — Send Scanned Documents Directly from the Scanner",
   description:
     "Scan documents and send them as email attachments directly from the Plustek eScan — no PC required. Configure SMTP and scan-to-email in minutes.",
-  alternates: { canonical: "https://scan2dms.com/solutions/scan-to-email" },
+  alternates: { canonical: "https://scan2dms.co.uk/solutions/scan-to-email" },
 };
 
 export default function ScanToEmailPage() {

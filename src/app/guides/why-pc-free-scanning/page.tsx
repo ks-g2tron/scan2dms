@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Why PC-Free Scanning? Benefits of Standalone Network Scanners",
   description:
     "Discover why UK businesses are switching to PC-free document scanners that scan directly to SharePoint and OneDrive without drivers, desktop software, or IT support.",
-  alternates: { canonical: "https://scan2dms.com/guides/why-pc-free-scanning" },
+  alternates: { canonical: "https://scan2dms.co.uk/guides/why-pc-free-scanning" },
 };
 
 export default function WhyPcFreeScanningPage() {

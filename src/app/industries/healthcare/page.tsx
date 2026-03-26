@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Document Scanning for Healthcare — NHS and Private Practice",
   description:
     "Scan patient forms, referrals, and clinical records directly to SharePoint. Designed for NHS trusts, GP practices, and private healthcare providers in the UK.",
-  alternates: { canonical: "https://scan2dms.com/industries/healthcare" },
+  alternates: { canonical: "https://scan2dms.co.uk/industries/healthcare" },
 };
 
 export default function HealthcarePage() {

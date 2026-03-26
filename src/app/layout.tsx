@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "UK specialist for PC-free document scanning to SharePoint, OneDrive and Microsoft 365. Plustek eScan network scanners — no drivers, no IT tickets.",
-  metadataBase: new URL("https://scan2dms.com"),
+  metadataBase: new URL("https://scan2dms.co.uk"),
   openGraph: {
     type: "website",
     locale: "en_GB",

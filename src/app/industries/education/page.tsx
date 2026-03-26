@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Document Scanning for Schools and Universities",
   description:
     "Streamline admissions, student records, and admin paperwork with PC-free scanning to SharePoint. Built for UK schools, colleges, and universities.",
-  alternates: { canonical: "https://scan2dms.com/industries/education" },
+  alternates: { canonical: "https://scan2dms.co.uk/industries/education" },
 };
 
 export default function EducationPage() {

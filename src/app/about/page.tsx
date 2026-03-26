@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About — scan2dms.com | Scan to SharePoint Specialists",
   description: "scan2dms.com is a specialist resource for UK businesses implementing PC-free document scanning with Microsoft 365 and SharePoint.",
-  alternates: { canonical: "https://scan2dms.com/about" },
+  alternates: { canonical: "https://scan2dms.co.uk/about" },
 };
 export default function AboutPage() {
   return (
