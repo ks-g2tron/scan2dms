@@ -77,6 +77,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/guides/dms-roi-calculation-uk", priority: 0.7 },
     { path: "/guides/dms-implementation-guide-uk", priority: 0.7 },
     { path: "/guides/best-dms-manufacturing-uk", priority: 0.7 },
+    // New SEO cluster pages
+    { path: "/guides/medical-records-scanning-uk", priority: 0.7 },
+    { path: "/guides/nhs-document-scanning", priority: 0.7 },
+    { path: "/guides/scan-to-sharepoint-small-business-uk", priority: 0.7 },
+    { path: "/guides/document-scanning-law-firms-uk", priority: 0.7 },
+    { path: "/guides/document-scanning-accountants-uk", priority: 0.7 },
+    { path: "/guides/dms-for-gp-surgeries-uk", priority: 0.7 },
+    // A650 Pro product page
+    { path: "/products/escan-a650-pro", priority: 0.9 },
     // Foundation guides
     { path: "/guides/what-is-scan-to-dms", priority: 0.7 },
     { path: "/guides/why-pc-free-scanning", priority: 0.7 },
