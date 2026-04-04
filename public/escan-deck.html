@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From Shopfloor to SharePoint — eScan A450 Pro</title>
+<style>
+/* ===== VIEWPORT BASE ===== */
+html, body { height: 100%; overflow-x: hidden; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+.slide {
+  width: 100vw; height: 100vh; height: 100dvh;
+  overflow: hidden; scroll-snap-align: start;
+  display: flex; flex-direction: column; position: relative;
+}
+.slide-content {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; max-height: 100%; overflow: hidden;
+  padding: var(--slide-padding);
+}
+:root {
+  --title-size: clamp(1.5rem, 5vw, 4rem);
+  --h2-size: clamp(1.25rem, 3.5vw, 2.5rem);
+  --h3-size: clamp(1rem, 2.5vw, 1.75rem);
+  --body-size: clamp(0.75rem, 1.5vw, 1.125rem);
+  --small-size: clamp(0.65rem, 1vw, 0.875rem);
+  --slide-padding: clamp(1rem, 4vw, 4rem);
+  --content-gap: clamp(0.5rem, 2vw, 2rem);
+  --element-gap: clamp(0.25rem, 1vw, 1rem);
+}
+@media (max-height: 700px) { :root { --slide-padding: clamp(0.75rem, 3vw, 2rem); --title-size: clamp(1.25rem, 4.5vw, 2.5rem); } }
+@media (max-height: 600px) { :root { --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem); --title-size: clamp(1.1rem, 4vw, 2rem); } .nav-dots, .keyboard-hint { display: none; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; } }
+
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+
+/* ===== THEME ===== */
+:root {
+  --steel: #0d1117;
+  --steel-mid: #161b22;
+  --steel-light: #21262d;
+  --orange: #f08c1d;
+  --orange-dim: rgba(240,140,29,0.15);
+  --orange-glow: rgba(240,140,29,0.4);
+  --white: #e6edf3;
+  --muted: #8b949e;
+  --green: #3fb950;
+  --red: #f85149;
+  --blue: #58a6ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Syne', sans-serif; background: var(--steel); color: var(--white); }
+
+/* ===== NAV ===== */
+.nav-dots {
+  position: fixed; right: clamp(0.75rem, 2vw, 1.5rem); top: 50%;
+  transform: translateY(-50%); z-index: 100;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.nav-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--muted); cursor: pointer;
+  transition: all 0.3s; border: none;
+}
+.nav-dot.active { background: var(--orange); transform: scale(1.4); }
+.keyboard-hint {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 100;
+  font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted);
+  opacity: 0.5;
+}
+
+/* ===== SLIDE 1: TITLE ===== */
+.s1 { background: var(--steel); }
+.s1::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(240,140,29,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(88,166,255,0.06) 0%, transparent 50%);
+}
+.s1 .grid-bg {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image: linear-gradient(var(--muted) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--muted) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.s1 .badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--orange-dim); border: 1px solid var(--orange-glow);
+  padding: 0.4em 1em; border-radius: 2rem;
+  font-size: var(--small-size); color: var(--orange); font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: var(--content-gap);
+  animation: fadeUp 0.6s ease both;
+}
+.s1 h1 {
+  font-size: var(--title-size); font-weight: 800; line-height: 1.05;
+  margin-bottom: var(--element-gap);
+  animation: fadeUp 0.6s ease 0.15s both;
+}
+.s1 h1 span { color: var(--orange); }
+.s1 .sub {
+  font-size: var(--h3-size); color: var(--muted); font-weight: 400;
+  max-width: 55ch; margin-bottom: var(--content-gap);
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+.s1 .stat-row {
+  display: flex; gap: var(--content-gap); flex-wrap: wrap;
+  animation: fadeUp 0.6s ease 0.45s both;
+}
+.s1 .stat {
+  background: var(--steel-mid); border: 1px solid var(--steel-light);
+  padding: 0.75em 1.25em; border-radius: 0.5rem;
+}
+.s1 .stat .num { font-size: var(--h2-size); font-weight: 800; color: var(--orange); }
+.s1 .stat .lbl { font-size: var(--small-size); color: var(--muted); }
+.s1 .corner-tag {
+  position: absolute; bottom: var(--slide-padding); right: var(--slide-padding);
+  font-family: 'DM Mono', monospace; font-size: var(--small-size); color: var(--muted);
+  animation: fadeIn 1s ease 0.6s both;
+}
+
+/* ===== SLIDE 2: PROBLEM ===== */
+.s2 { background: var(--steel); }
+.s2::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 60%, rgba(248,81,73,0.08) 0%, transparent 55%);
+}
+.s2 .slide-label {
+  font-family: 'DM Mono', monospace; font-size: var(--small-size);
+  color: var(--red); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: var(--element-gap);
+  animation: fadeUp 0.5s ease both;
+}
+.s2 h2 { font-size: var(--h2-size); font-weight: 800; margin-bottom: var(--content-gap); animation: fadeUp 0.5s ease 0.1s both; }
+.s2 .pain-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--element-gap); animation: fadeUp 0.5s ease 0.2s both;
+}
+.pain-card {
+  background: var(--steel-mid); border: 1px solid var(--steel-light);
+  border-radius: 0.75rem; padding: clamp(0.75rem, 2vw, 1.5rem);
+  position: relative; overflow: hidden;
+}
+.pain-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--red);
+}
+.pain-card .icon { font-size: clamp(1.5rem, 3vw, 2.25rem); margin-bottom: 0.5em; }
+.pain-card h3 { font-size: var(--h3-size); font-weight: 700; margin-bottom: 0.3em; }
+.pain-card p { font-size: var(--small-size); color: var(--muted); line-height: 1.4; }
+
+/* ===== SLIDE 3: THE MOMENT ===== */
+.s3 { background: var(--steel); justify-content: center; align-items: center; text-align: center; }
+.s3::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(240,140,29,0.18) 0%, transparent 65%);
+}
+.s3 .big-question {
+  font-size: clamp(2rem, 7vw, 6rem); font-weight: 800; line-height: 1.0;
+  animation: scaleIn 0.7s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+.s3 .big-question em { color: var(--orange); font-style: normal; }
+.s3 .answer-line {
+  font-size: var(--h3-size); color: var(--muted); margin-top: var(--element-gap);
+  animation: fadeUp 0.5s ease 0.4s both;
+}
+.s3 .answer-line strong { color: var(--white); }
+
+/* ===== SLIDE 4: THE RESULT (show first) ===== */
+.s4 { background: var(--steel-mid); }
+.s4::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(63,185,80,0.1) 0%, transparent 55%);
+}
+.s4 .slide-label {
+  font-family: 'DM Mono', monospace; font-size: var(--small-size);
+  color: var(--green); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: var(--element-gap); animation: fadeUp 0.5s ease both;
+}
+.s4 h2 { font-size: var(--h2-size); font-weight: 800; margin-bottom: var(--content-gap); animation: fadeUp 0.5s ease 0.1s both; }
+.s4 .result-flow {
+  display: flex; align-items: center; gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  flex-wrap: wrap; animation: fadeUp 0.5s ease 0.2s both;
+}
+.result-step {
+  background: var(--steel); border: 1px solid rgba(63,185,80,0.3);
+  border-radius: 0.75rem; padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(1rem, 2vw, 1.75rem);
+  text-align: center; flex: 1; min-width: 120px;
+}
+.result-step .rs-icon { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 0.4em; }
+.result-step .rs-label { font-size: var(--small-size); color: var(--green); font-weight: 600; }
+.result-step .rs-desc { font-size: var(--small-size); color: var(--muted); margin-top: 0.2em; }
+.flow-arrow { color: var(--orange); font-size: clamp(1rem, 2vw, 1.5rem); font-weight: 800; flex-shrink: 0; }
+.s4 .outcome-bar {
+  margin-top: var(--content-gap); background: rgba(63,185,80,0.1);
+  border: 1px solid rgba(63,185,80,0.3); border-radius: 0.5rem;
+  padding: 0.75em 1.25em; display: flex; align-items: center; gap: 1em;
+  animation: fadeUp 0.5s ease 0.35s both;
+}
+.outcome-bar .check { color: var(--green); font-size: 1.25rem; }
+.outcome-bar p { font-size: var(--body-size); color: var(--white); }
+.outcome-bar strong { color: var(--green); }
+
+/* ===== SLIDE 5: HOW IT WORKS (3 buttons) ===== */
+.s5 { background: var(--steel); }
+.s5::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 60% 30%, rgba(88,166,255,0.07) 0%, transparent 50%);
+}
+.s5 .slide-label {
+  font-family: 'DM Mono', monospace; font-size: var(--small-size);
+  color: var(--blue); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: var(--element-gap); animation: fadeUp 0.5s ease both;
+}
+.s5 h2 { font-size: var(--h2-size); font-weight: 800; margin-bottom: var(--content-gap); animation: fadeUp 0.5s ease 0.1s both; }
+.s5 .button-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--element-gap); animation: fadeUp 0.5s ease 0.2s both;
+}
+.btn-card {
+  background: var(--steel-mid); border: 1px solid var(--steel-light);
+  border-radius: 0.75rem; padding: clamp(0.75rem, 2vw, 1.5rem);
+  position: relative; overflow: hidden; transition: border-color 0.2s;
+}
+.btn-card:nth-child(1)::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #f85149; }
+.btn-card:nth-child(2)::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--orange); }
+.btn-card:nth-child(3)::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--blue); }
+.btn-card .btn-num {
+  font-family: 'DM Mono', monospace; font-size: var(--small-size);
+  background: var(--steel-light); padding: 0.2em 0.6em; border-radius: 0.25rem;
+  display: inline-block; margin-bottom: 0.5em;
+}
+.btn-card h3 { font-size: var(--h3-size); font-weight: 700; margin-bottom: 0.4em; }
+.btn-card .dest { font-size: var(--small-size); color: var(--muted); margin-bottom: 0.3em; }
+.btn-card .dest span { color: var(--white); }
+.btn-card .tag {
+  display: inline-block; font-size: calc(var(--small-size) * 0.9);
+  background: var(--orange-dim); color: var(--orange);
+  padding: 0.15em 0.5em; border-radius: 0.25rem; margin-top: 0.3em;
+}
+.s5 .mono-note {
+  margin-top: var(--content-gap); font-family: 'DM Mono', monospace;
+  font-size: var(--small-size); color: var(--muted);
+  display: flex; align-items: center; gap: 0.5em;
+  animation: fadeUp 0.5s ease 0.35s both;
+}
+.mono-note .pill {
+  background: var(--steel-light); padding: 0.2em 0.6em; border-radius: 0.25rem;
+  color: var(--orange);
+}
+
+/* ===== SLIDE 6: THE SCANNER ===== */
+.s6 { background: var(--steel-mid); }
+.s6::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 40% 60%, rgba(240,140,29,0.1) 0%, transparent 55%);
+}
+.s6 .slide-label {
+  font-family: 'DM Mono', monospace; font-size: var(--small-size);
+  color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: var(--element-gap); animation: fadeUp 0.5s ease both;
+}
+.s6 h2 { font-size: var(--h2-size); font-weight: 800; margin-bottom: var(--content-gap); animation: fadeUp 0.5s ease 0.1s both; }
+.s6 .spec-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--content-gap);
+  animation: fadeUp 0.5s ease 0.2s both;
+}
+.spec-list { display: flex; flex-direction: column; gap: var(--element-gap); }
+.spec-item {
+  display: flex; align-items: flex-start; gap: 0.75em;
+  background: var(--steel); border: 1px solid var(--steel-light);
+  border-radius: 0.5rem; padding: 0.75em 1em;
+}
+.spec-icon { font-size: 1.25em; flex-shrink: 0; }
+.spec-text h4 { font-size: var(--body-size); font-weight: 700; }
+.spec-text p { font-size: var(--small-size); color: var(--muted); }
+.spec-highlight {
+  background: var(--orange-dim); border: 1px solid var(--orange-glow);
+  border-radius: 0.75rem; padding: clamp(1rem, 2vw, 2rem);
+  display: flex; flex-direction: column; justify-content: center; gap: var(--element-gap);
+}
+.spec-highlight .big { font-size: var(--title-size); font-weight: 800; color: var(--orange); }
+.spec-highlight p { font-size: var(--body-size); color: var(--white); }
+.spec-highlight .sub { font-size: var(--small-size); color: var(--muted); }
+
+/* ===== SLIDE 7: WHO IS THIS FOR ===== */
+.s7 { background: var(--steel); }
+.s7::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 80%, rgba(63,185,80,0.07) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(88,166,255,0.06) 0%, transparent 45%);
+}
+.s7 .slide-label {
+  font-family: 'DM Mono', monospace; font-size: var(--small-size);
+  color: var(--green); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: var(--element-gap); animation: fadeUp 0.5s ease both;
+}
+.s7 h2 { font-size: var(--h2-size); font-weight: 800; margin-bottom: var(--content-gap); animation: fadeUp 0.5s ease 0.1s both; }
+.s7 .audience-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--element-gap); animation: fadeUp 0.5s ease 0.2s both;
+}
+.audience-card {
+  background: var(--steel-mid); border: 1px solid var(--steel-light);
+  border-radius: 0.75rem; padding: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+.audience-card .role { font-size: var(--body-size); font-weight: 700; margin-bottom: 0.3em; }
+.audience-card .company { font-size: var(--small-size); color: var(--orange); margin-bottom: 0.5em; }
+.audience-card .need { font-size: var(--small-size); color: var(--muted); line-height: 1.4; }
+.s7 .compliance-bar {
+  margin-top: var(--content-gap); display: flex; gap: var(--element-gap); flex-wrap: wrap;
+  animation: fadeUp 0.5s ease 0.3s both;
+}
+.compliance-tag {
+  background: var(--steel-mid); border: 1px solid var(--steel-light);
+  padding: 0.3em 0.8em; border-radius: 0.25rem;
+  font-family: 'DM Mono', monospace; font-size: var(--small-size); color: var(--blue);
+}
+
+/* ===== SLIDE 8: CTA ===== */
+.s8 { background: var(--steel); justify-content: center; align-items: flex-start; }
+.s8::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(240,140,29,0.15) 0%, transparent 60%);
+}
+.s8 .cta-eyebrow {
+  font-family: 'DM Mono', monospace; font-size: var(--small-size);
+  color: var(--orange); letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: var(--element-gap); animation: fadeUp 0.5s ease both;
+}
+.s8 h2 { font-size: var(--title-size); font-weight: 800; line-height: 1.05; margin-bottom: var(--content-gap); animation: fadeUp 0.5s ease 0.15s both; }
+.s8 h2 span { color: var(--orange); }
+.s8 .cta-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--element-gap);
+  animation: fadeUp 0.5s ease 0.3s both;
+}
+.cta-item {
+  display: flex; align-items: flex-start; gap: 0.75em;
+  background: var(--steel-mid); border: 1px solid var(--steel-light);
+  border-radius: 0.5rem; padding: 0.75em 1em;
+}
+.cta-item .ci-icon { font-size: 1.25em; flex-shrink: 0; }
+.cta-item h4 { font-size: var(--body-size); font-weight: 700; }
+.cta-item p { font-size: var(--small-size); color: var(--muted); }
+.s8 .contact-block {
+  margin-top: var(--content-gap);
+  background: var(--orange-dim); border: 1px solid var(--orange-glow);
+  border-radius: 0.75rem; padding: clamp(0.75rem, 2vw, 1.5rem);
+  animation: fadeUp 0.5s ease 0.45s both;
+}
+.contact-block h3 { font-size: var(--h3-size); font-weight: 700; color: var(--orange); margin-bottom: 0.25em; }
+.contact-block p { font-size: var(--body-size); color: var(--muted); }
+.contact-block .domain { color: var(--white); font-weight: 600; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== RESPONSIVE GRIDS ===== */
+@media (max-width: 700px) {
+  .s2 .pain-grid, .s5 .button-grid, .s7 .audience-grid { grid-template-columns: 1fr; }
+  .s4 .result-flow { flex-direction: column; }
+  .s6 .spec-layout { grid-template-columns: 1fr; }
+  .s8 .cta-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" aria-label="Slide navigation">
+  <button class="nav-dot active" onclick="goTo(0)" aria-label="Slide 1"></button>
+  <button class="nav-dot" onclick="goTo(1)" aria-label="Slide 2"></button>
+  <button class="nav-dot" onclick="goTo(2)" aria-label="Slide 3"></button>
+  <button class="nav-dot" onclick="goTo(3)" aria-label="Slide 4"></button>
+  <button class="nav-dot" onclick="goTo(4)" aria-label="Slide 5"></button>
+  <button class="nav-dot" onclick="goTo(5)" aria-label="Slide 6"></button>
+  <button class="nav-dot" onclick="goTo(6)" aria-label="Slide 7"></button>
+  <button class="nav-dot" onclick="goTo(7)" aria-label="Slide 8"></button>
+</nav>
+<div class="keyboard-hint">↑ ↓ to navigate</div>
+
+<!-- SLIDE 1: TITLE -->
+<section class="slide s1">
+  <div class="grid-bg"></div>
+  <div class="slide-content">
+    <div class="badge">📄 eScan A450 Pro · Manufacturing Series</div>
+    <h1>From <span>Shopfloor</span><br>to SharePoint<br>in One Scan</h1>
+    <p class="sub">How UK manufacturing SMEs eliminate lost paperwork and pass audits without changing how their team works.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">1</div><div class="lbl">Button press</div></div>
+      <div class="stat"><div class="num">3s</div><div class="lbl">To SharePoint</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">IT setup</div></div>
+    </div>
+  </div>
+  <div class="corner-tag">scan2dms.co.uk</div>
+</section>
+
+<!-- SLIDE 2: PROBLEM -->
+<section class="slide s2">
+  <div class="slide-content">
+    <div class="slide-label">// the problem</div>
+    <h2>Your paperwork is<br>working against you</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">🗂️</div>
+        <h3>Lost documents</h3>
+        <p>Delivery notes, CMM reports, job sheets — filed in a drawer nobody checks until the auditor asks.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">⏱️</div>
+        <h3>Wasted time</h3>
+        <p>Staff typing job numbers on an onscreen keyboard. Wrong digits. Wrong folder. Wrong person.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">⚠️</div>
+        <h3>Audit risk</h3>
+        <p>IATF 16949, ISO 9001 — auditors expect instant document retrieval. Paper filing doesn't cut it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: THE QUESTION -->
+<section class="slide s3">
+  <div class="slide-content" style="align-items:center; text-align:center;">
+    <div class="big-question">What if every document<br>filed <em>itself</em>?</div>
+    <p class="answer-line">No typing. No folders. No IT. <strong>Just scan.</strong></p>
+  </div>
+</section>
+
+<!-- SLIDE 4: THE RESULT (show outcome first) -->
+<section class="slide s4">
+  <div class="slide-content">
+    <div class="slide-label">// the result</div>
+    <h2>Your auditor asks for<br>Job JB-4471. You find it<br>in 5 seconds.</h2>
+    <div class="result-flow">
+      <div class="result-step">
+        <div class="rs-icon">📋</div>
+        <div class="rs-label">Delivery note arrives</div>
+        <div class="rs-desc">Job number barcode already on the doc</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="result-step">
+        <div class="rs-icon">🔘</div>
+        <div class="rs-label">Press Button 1</div>
+        <div class="rs-desc">One physical button. Nothing else.</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="result-step">
+        <div class="rs-icon">☁️</div>
+        <div class="rs-label">In SharePoint</div>
+        <div class="rs-desc">Named by barcode, in the right folder</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="result-step">
+        <div class="rs-icon">✅</div>
+        <div class="rs-label">Audit-ready</div>
+        <div class="rs-desc">Searchable. Traceable. Instantly.</div>
+      </div>
+    </div>
+    <div class="outcome-bar">
+      <span class="check">✓</span>
+      <p>No PC open. No software running. No manual naming. The barcode <strong>names the file</strong>. The button <strong>decides where it goes.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: 3 BUTTONS -->
+<section class="slide s5">
+  <div class="slide-content">
+    <div class="slide-label">// how it's configured</div>
+    <h2>Three buttons.<br>Three document types.<br>Zero decisions.</h2>
+    <div class="button-grid">
+      <div class="btn-card">
+        <div class="btn-num">BTN 1</div>
+        <h3>Delivery Notes</h3>
+        <div class="dest">→ <span>SharePoint / Goods-In / {job-number}</span></div>
+        <p style="font-size:var(--small-size);color:var(--muted);">Barcode reads job number from supplier doc — filed under correct job instantly.</p>
+        <span class="tag">Barcode auto-name</span>
+      </div>
+      <div class="btn-card">
+        <div class="btn-num">BTN 2</div>
+        <h3>CMM Quality Reports</h3>
+        <div class="dest">→ <span>SharePoint / Quality / {job-number}</span></div>
+        <p style="font-size:var(--small-size);color:var(--muted);">Zeiss, Renishaw, Mitutoyo output — captured directly into the quality folder chain.</p>
+        <span class="tag">ISO 9001 ready</span>
+      </div>
+      <div class="btn-card">
+        <div class="btn-num">BTN 3</div>
+        <h3>Supplier Invoices</h3>
+        <div class="dest">→ <span>SharePoint / Finance / Invoices / {supplier}</span></div>
+        <p style="font-size:var(--small-size);color:var(--muted);">Invoice number from barcode. Filed under supplier. Ready for accounts team.</p>
+        <span class="tag">MTD-friendly</span>
+      </div>
+    </div>
+    <div class="mono-note">
+      <span>Each button = pre-configured destination + auto-naming. Setup once. Works forever.</span>
+      <span class="pill">No IT required</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: THE SCANNER -->
+<section class="slide s6">
+  <div class="slide-content">
+    <div class="slide-label">// the hardware</div>
+    <h2>Plustek eScan A450 Pro</h2>
+    <div class="spec-layout">
+      <div class="spec-list">
+        <div class="spec-item">
+          <span class="spec-icon">📷</span>
+          <div class="spec-text">
+            <h4>Built-in barcode reader</h4>
+            <p>Reads 1D + 2D barcodes. No separate scanner needed.</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">📶</span>
+          <div class="spec-text">
+            <h4>WiFi + Ethernet direct</h4>
+            <p>Connects directly to your network. No PC in the loop.</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">☁️</span>
+          <div class="spec-text">
+            <h4>SharePoint native</h4>
+            <p>Reads your SharePoint sites in real-time. Checks documents in automatically.</p>
+          </div>
+        </div>
+        <div class="spec-item">
+          <span class="spec-icon">📐</span>
+          <div class="spec-text">
+            <h4>A3 long-paper capable</h4>
+            <p>Handles drawings, wide-format quality docs and mixed batches.</p>
+          </div>
+        </div>
+      </div>
+      <div class="spec-highlight">
+        <div class="big">A450<br>Pro</div>
+        <p>The only desktop scanner with a physical button interface built for SharePoint.</p>
+        <div class="sub">Scan to: SharePoint · Network Folder · Email · FTP · Cloud Storage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: WHO IS THIS FOR -->
+<section class="slide s7">
+  <div class="slide-content">
+    <div class="slide-label">// ideal customer</div>
+    <h2>Built for ops managers<br>at UK manufacturing SMEs</h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="role">Operations Manager</div>
+        <div class="company">Precision machining · 20–150 staff</div>
+        <div class="need">Needs job paperwork traceable without relying on IT to set up a system.</div>
+      </div>
+      <div class="audience-card">
+        <div class="role">Quality Manager</div>
+        <div class="company">Automotive · IATF 16949 certified</div>
+        <div class="need">Must produce CMM reports and inspection records instantly during audit.</div>
+      </div>
+      <div class="audience-card">
+        <div class="role">Finance / Admin</div>
+        <div class="company">Multi-site manufacturer · Making Tax Digital</div>
+        <div class="need">Supplier invoices need to land in accounts without manual processing.</div>
+      </div>
+    </div>
+    <div class="compliance-bar">
+      <span class="compliance-tag">IATF 16949</span>
+      <span class="compliance-tag">ISO 9001</span>
+      <span class="compliance-tag">Making Tax Digital</span>
+      <span class="compliance-tag">Microsoft 365</span>
+      <span class="compliance-tag">SharePoint</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8: CTA -->
+<section class="slide s8">
+  <div class="slide-content">
+    <div class="cta-eyebrow">// next step</div>
+    <h2>See it scan a<br><span>real delivery note</span><br>in 10 minutes.</h2>
+    <div class="cta-grid">
+      <div class="cta-item">
+        <span class="ci-icon">🎯</span>
+        <div>
+          <h4>1:1 Demo</h4>
+          <p>30-minute session. We scan your actual documents into your SharePoint. No prep needed.</p>
+        </div>
+      </div>
+      <div class="cta-item">
+        <span class="ci-icon">📦</span>
+        <div>
+          <h4>Proof of Concept</h4>
+          <p>We configure 3 buttons for your document types. You test it free for 2 weeks.</p>
+        </div>
+      </div>
+      <div class="cta-item">
+        <span class="ci-icon">💬</span>
+        <div>
+          <h4>Quick call</h4>
+          <p>15 minutes. Tell us your current document headache. We'll tell you if A450 Pro solves it.</p>
+        </div>
+      </div>
+      <div class="cta-item">
+        <span class="ci-icon">🔗</span>
+        <div>
+          <h4>Resources</h4>
+          <p>Full spec sheet, compliance guide and SharePoint setup docs available on request.</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-block">
+      <h3>Ready to digitise your shopfloor?</h3>
+      <p>Book a demo at <span class="domain">scan2dms.co.uk</span> · Powered by Plustek eScan A450 Pro</p>
+    </div>
+  </div>
+</section>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.nav-dot');
+let current = 0;
+
+function goTo(n) {
+  current = Math.max(0, Math.min(n, slides.length - 1));
+  slides[current].scrollIntoView({ behavior: 'smooth' });
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); goTo(current + 1); }
+  if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); goTo(current - 1); }
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      current = [...slides].indexOf(entry.target);
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+  });
+}, { threshold: 0.6 });
+
+slides.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
